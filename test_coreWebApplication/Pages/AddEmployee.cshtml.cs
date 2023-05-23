@@ -23,7 +23,7 @@ namespace test_coreWebApplication.Pages
                 return Page();
             }
             string result = objDB.InsertData(Employee);
-            TempData["toastSuccess"] = result;
+            TempData["toastSuccess"] = "Insert";
 
             return RedirectToPage("Employee");
         }

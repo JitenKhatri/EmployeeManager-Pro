@@ -24,7 +24,7 @@ namespace test_coreWebApplication.Pages
                 return Page();
             }
             string result = objDB.UpdateData(Employee);
-            TempData["toastSuccess"] = result;
+            TempData["toastSuccess"] = "Update";
             return RedirectToPage("Employee");
         }
     }

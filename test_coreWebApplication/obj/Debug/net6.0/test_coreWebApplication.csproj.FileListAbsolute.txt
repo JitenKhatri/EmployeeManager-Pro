@@ -42,3 +42,10 @@ C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\obj\
 C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\obj\Debug\net6.0\test_coreWebApplication.pdb
 C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\obj\Debug\net6.0\test_coreWebApplication.genruntimeconfig.cache
 C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Dapper.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Serilog.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Serilog.Extensions.Logging.File.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Serilog.Sinks.Async.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Serilog.Sinks.RollingFile.dll

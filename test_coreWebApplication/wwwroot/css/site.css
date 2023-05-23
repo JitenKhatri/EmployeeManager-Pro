@@ -32,3 +32,8 @@ body {
         transform: translateY(-50%);
         cursor: pointer;
     }
+
+div.dt-buttons {
+    float: left;
+    margin-right: 20px;
+}

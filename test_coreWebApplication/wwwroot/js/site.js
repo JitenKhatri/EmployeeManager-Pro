@@ -50,9 +50,13 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         paging: true,
+        "lengthMenu": [[10, 25, 50, 2147483647 ], [10, 25, 50, "All"]],
         "ordering": false,
-        "lengthChange": false,
-        "searching": false,
+        "searching": true,
+        dom: 'Blfrtip',
+        buttons: [
+            'csv'
+        ],
         ajax: {
             url: '/Employee?handler=GetEmployees',
             beforeSend: function (xhr) {

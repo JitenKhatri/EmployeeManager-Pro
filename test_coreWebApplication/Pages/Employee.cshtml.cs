@@ -36,14 +36,15 @@ namespace test_coreWebApplication.Pages
             var start = Request.Form["start"].FirstOrDefault();
             var length = Request.Form["length"].FirstOrDefault();
             var draw = Request.Form["draw"].FirstOrDefault();
+            var searchValue = Request.Form["search[value]"].FirstOrDefault();
             using (SqlConnection con = new SqlConnection(configuration.GetConnectionString("mycon")))
             {
                 con.Open();
-
                 // Retrieve the paginated data
                 var p = new DynamicParameters();
                 p.Add("@Start", start);
                 p.Add("@Length", length);
+                p.Add("@SearchString", searchValue);
                 p.Add("@TotalRecords", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 p.Add("@FilteredRecords", dbType: DbType.Int32, direction: ParameterDirection.Output);
 

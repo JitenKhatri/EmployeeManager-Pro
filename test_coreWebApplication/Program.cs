@@ -6,15 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<DataAccess>();
 builder.Services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
-var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
-ILogger logger = loggerFactory.CreateLogger<Program>();
+//builder.Logging.AddFile("Logs/myapp-{Date}.txt"); for serilog if using.
+//var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+//ILogger logger = loggerFactory.CreateLogger<Program>();
 
-logger.LogInformation("Logging information.");
-logger.LogCritical("Logging critical information.");
-logger.LogDebug("Logging debug information.");
-logger.LogError("Logging error information.");
-logger.LogTrace("Logging trace");
-logger.LogWarning("Logging warning.");
+//logger.LogInformation("Logging information.");
+//logger.LogCritical("Logging critical information.");
+//logger.LogDebug("Logging debug information.");
+//logger.LogError("Logging error information.");
+//logger.LogTrace("Logging trace");
+//logger.LogWarning("Logging warning.");
 var app = builder.Build();
 
 
@@ -27,6 +28,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseHttpLogging(); /*to enable httplogging which potentially slow downs the system.*/
 app.UseStaticFiles();
 
 app.UseRouting();

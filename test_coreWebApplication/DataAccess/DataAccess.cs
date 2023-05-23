@@ -165,6 +165,7 @@ namespace test_coreWebApplication.DataAccess
                 con.Close();
             }
         }
+         
         public void LogError(Exception ex)
         {
             string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
