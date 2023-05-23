@@ -1,0 +1,21 @@
+Time: 23-05-2023 01:28:13 PM
+-----------------------------------------------------------
+Message: Procedure or function 'Usp_InsertUpdateDelete_Employee' expects parameter '@Query', which was not supplied.
+Source: Core .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 23-05-2023 01:34:52 PM
+-----------------------------------------------------------
+Message: Procedure or function 'Usp_InsertUpdateDelete_Employee' expects parameter '@Query', which was not supplied.
+Source: Core .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 23-05-2023 02:18:20 PM
+-----------------------------------------------------------
+Message: Procedure or function 'Usp_InsertUpdateDelete_Employee' expects parameter '@Query', which was not supplied.
+Source: Core .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
