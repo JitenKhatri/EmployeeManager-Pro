@@ -51,8 +51,11 @@ $(document).ready(function () {
         serverSide: true,
         paging: true,
         "lengthMenu": [[10, 25, 50, 2147483647 ], [10, 25, 50, "All"]],
-        "ordering": false,
+        "ordering": true,
         "searching": true,
+        columnDefs: [
+            { orderable: false, targets: [4,5,6] }
+        ],
         dom: 'Blfrtip',
         buttons: [
             'csv'
@@ -67,15 +70,15 @@ $(document).ready(function () {
             dataType: 'json'
         },
         "columns": [
-            {"data":"employeeId","name": "EmployeeId"},
-            { "data": "emailID", "name": "Email" },
-            { "data": "employeeName","name" : "Name" },
+            {"data":"employeeId","name": "EmployeeID"},
+            { "data": "emailID", "name": "EmailID" },
+            { "data": "employeeName","name" : "EmployeeName" },
             { "data": "address","name": "Address" },
             { "data": "mobileno","name" : "Mobileno" },
             { "data": "password", "name": "Password" },
             {
                 "render": function (data, type, full) {
-                    return "<a type='button' class='btn btn-primary' href='/EditEmployee/" + full.employeeId + "'>" +
+                    return "<a type='button' class='btn btn-primary' href='/AddEmployee/" + full.employeeId + "'>" +
                     "Update" +
                     "</a >" +
                         "<button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#deleteModal_" + full.employeeId + "'>" +
@@ -83,5 +86,18 @@ $(document).ready(function () {
                         "</button>" }
             },
         ]
+    });
+});
+
+$(function () {
+    $("#CountryId").on("change", function () {
+        var CountryId = $(this).val();
+        $("#CityId").empty();
+        $("#CityId").append("<option value=''>Select City</option>");
+        $.getJSON(`?handler=Cities&countryId=${CountryId}`, (data) => {
+            $.each(data, function (i, item) {
+                $("#CityId").append(`<option value="${item.cityId}">${item.cityName}</option>`);
+            });
+        });
     });
 });

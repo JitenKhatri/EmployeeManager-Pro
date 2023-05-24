@@ -1,0 +1,12 @@
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\bin\Debug\net6.0\test_coreWebApplication.Entities.deps.json
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\bin\Debug\net6.0\test_coreWebApplication.Entities.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\bin\Debug\net6.0\ref\test_coreWebApplication.Entities.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\bin\Debug\net6.0\test_coreWebApplication.Entities.pdb
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\test_coreWebApplication.Entities.csproj.AssemblyReference.cache
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\test_coreWebApplication.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\test_coreWebApplication.Entities.AssemblyInfoInputs.cache
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\test_coreWebApplication.Entities.AssemblyInfo.cs
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\test_coreWebApplication.Entities.csproj.CoreCompileInputs.cache
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\test_coreWebApplication.Entities.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\ref\test_coreWebApplication.Entities.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.Entities\obj\Debug\net6.0\test_coreWebApplication.Entities.pdb

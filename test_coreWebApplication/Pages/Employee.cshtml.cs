@@ -4,26 +4,29 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using test_coreWebApplication.Models;
+using test_coreWebApplication.DataAccess.Repositories.Interfaces;
+using test_coreWebApplication.Entities.Entities;
 
 namespace test_coreWebApplication.Pages
 {
     
     public class ShowAllEmployeeDetailsModel : PageModel
     {
-        private readonly DataAccess.DataAccess objDB;
+        private readonly IUnitOfWork objDB;
         private readonly IConfiguration configuration;
-        public ShowAllEmployeeDetailsModel(DataAccess.DataAccess _objDB, IConfiguration _configuration)
+        public ShowAllEmployeeDetailsModel(IUnitOfWork _objDB, IConfiguration _configuration)
         {
             objDB = _objDB;
             configuration = _configuration;
         }
+        
+        
         [BindProperty]
         public Employee Employee { get; set; }
         public List<Employee> Employees { get; set; } = new List<Employee>();
         public void OnGet(int start = 0, int length = 10)
         {
-            Employees = objDB.Selectalldata();
+            Employees = objDB.EmployeeRepository.Selectalldata();
         }
 
 
@@ -37,17 +40,20 @@ namespace test_coreWebApplication.Pages
             var length = Request.Form["length"].FirstOrDefault();
             var draw = Request.Form["draw"].FirstOrDefault();
             var searchValue = Request.Form["search[value]"].FirstOrDefault();
+            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+            var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
             using (SqlConnection con = new SqlConnection(configuration.GetConnectionString("mycon")))
             {
                 con.Open();
                 // Retrieve the paginated data
                 var p = new DynamicParameters();
-                p.Add("@Start", start);
+                p.Add("@Start", start); 
                 p.Add("@Length", length);
                 p.Add("@SearchString", searchValue);
                 p.Add("@TotalRecords", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 p.Add("@FilteredRecords", dbType: DbType.Int32, direction: ParameterDirection.Output);
-
+                p.Add("@SortColumn", sortColumn);
+                p.Add("@SortColumnDirection", sortColumnDirection);
                 employees = con.Query<Employee>("Usp_GetEmployees_Paginated", p, commandType: CommandType.StoredProcedure).ToList();
 
                 totalRecords = p.Get<int>("@TotalRecords");
@@ -69,7 +75,7 @@ namespace test_coreWebApplication.Pages
 
         public IActionResult OnPostDelete(string EmployeeId)
         {
-            int result = objDB.DeleteData(EmployeeId);
+            int result = objDB.EmployeeRepository.DeleteData(EmployeeId);
             TempData["toastError"] = result;
             return RedirectToPage();
         }

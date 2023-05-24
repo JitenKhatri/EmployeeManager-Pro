@@ -1,10 +1,12 @@
 using test_coreWebApplication.DataAccess;
+using test_coreWebApplication.DataAccess.Repositories;
+using test_coreWebApplication.DataAccess.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<DataAccess>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
 //builder.Logging.AddFile("Logs/myapp-{Date}.txt"); for serilog if using.
 //var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());

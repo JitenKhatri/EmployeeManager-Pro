@@ -1,0 +1,15 @@
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.csproj.AssemblyReference.cache
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.AssemblyInfoInputs.cache
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.AssemblyInfo.cs
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\bin\Debug\net6.0\test_coreWebApplication.DataAccess.deps.json
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\bin\Debug\net6.0\test_coreWebApplication.DataAccess.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\bin\Debug\net6.0\ref\test_coreWebApplication.DataAccess.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\bin\Debug\net6.0\test_coreWebApplication.DataAccess.pdb
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\bin\Debug\net6.0\test_coreWebApplication.Entities.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\bin\Debug\net6.0\test_coreWebApplication.Entities.pdb
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.csproj.CopyComplete
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\ref\test_coreWebApplication.DataAccess.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication.DataAccess\obj\Debug\net6.0\test_coreWebApplication.DataAccess.pdb
