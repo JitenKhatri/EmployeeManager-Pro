@@ -2,7 +2,7 @@
 
 namespace test_coreWebApplication.Entities.Entities
 {
-    public class Employee
+    public class Employee : IValidatableObject
     {
         public int EmployeeId { get; set; }
 
@@ -37,6 +37,17 @@ namespace test_coreWebApplication.Entities.Entities
 
         public DateTime DateOfBirth { get; set; }
 
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var results = new List<ValidationResult>();
+
+            if (DateOfBirth > DateTime.Today.AddYears(-18))
+            {
+                results.Add(new ValidationResult("Employee must be at least 18 years old.", new[] { "DateOfBirth" }));
+            }
+
+            return results;
+        }
     }
 }
 

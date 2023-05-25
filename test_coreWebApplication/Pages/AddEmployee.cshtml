@@ -60,16 +60,18 @@
     </div>
          <div class="form-group col-md-4">
         <label class="form-label">City</label>
-        <select asp-for="Employee.CityId" id="CityId" >
+        <select asp-for="Employee.CityId" id="CityId" asp-items="Model.Cities">
+        <option value="">Select City</option>
+                    
        </select>
     </div>
-       <div class="form-group col-md-4">
+       <div class="col-md-4">
         <label class="form-label">Date Of Birth</label>
-        <select asp-for="Employee.CityId" id="CityId" >
-       </select>
+        <input type="date" asp-for="Employee.DateOfBirth" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.DateOfBirth"></span>
     </div>
     </div>
-    @{if(Model.Employee.CityId == 0)
+    @{if(Model.Employee.EmployeeId == 0)
     {
         <input type="submit" class="btn btn-primary" value="Create" />
     }

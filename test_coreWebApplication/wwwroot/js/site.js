@@ -19,6 +19,11 @@ function handlePaste(e) {
         e.preventDefault();
     }
 };
+$(document).bind("ajaxSend", function () {
+    $('.loader').addClass('d-block').removeClass('d-none');
+}).bind("ajaxComplete", function () {
+    $('.loader').addClass('d-none').removeClass('d-block');
+});
 
 var showPasswordTimeout;
 
@@ -50,11 +55,11 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         paging: true,
-        "lengthMenu": [[10, 25, 50, 2147483647 ], [10, 25, 50, "All"]],
-        "ordering": true,
-        "searching": true,
+        lengthMenu: [[10, 25, 50, 2147483647], [10, 25, 50, "All"]],
+        ordering: true,
+        searching: true,
         columnDefs: [
-            { orderable: false, targets: [4,5,6] }
+            { orderable: false, targets: [4, 5, 6] }
         ],
         dom: 'Blfrtip',
         buttons: [
@@ -69,25 +74,55 @@ $(document).ready(function () {
             type: 'POST',
             dataType: 'json'
         },
-        "columns": [
-            {"data":"employeeId","name": "EmployeeID"},
-            { "data": "emailID", "name": "EmailID" },
-            { "data": "employeeName","name" : "EmployeeName" },
-            { "data": "address","name": "Address" },
-            { "data": "mobileno","name" : "Mobileno" },
-            { "data": "password", "name": "Password" },
+        columns: [
+            { data: "employeeId", name: "EmployeeID", searchable: true, search: { search: "" } },
+            { data: "emailID", name: "EmailID", searchable: true, search: { search: "" } },
+            { data: "employeeName", name: "EmployeeName", searchable: true, search: { search: "" } },
+            { data: "address", name: "Address", searchable: true, search: { search: "" } },
+            { data: "mobileno", name: "Mobileno", searchable: true, search: { search: "" } },
             {
-                "render": function (data, type, full) {
+                data: "dateOfBirth", name: "DateOfBirth", searchable: false, search: { search: "" }, "render": function (data, type, full) {
+                    var trimmedDate = data.substring(0, 10);
+                    return trimmedDate;
+                } },
+            {
+                render: function (data, type, full) {
                     return "<a type='button' class='btn btn-primary' href='/AddEmployee/" + full.employeeId + "'>" +
-                    "Update" +
-                    "</a >" +
+                        "Update" +
+                        "</a >" +
                         "<button type='button' class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#deleteModal_" + full.employeeId + "'>" +
-                            "Delete" +
-                        "</button>" }
+                        "Delete" +
+                        "</button>";
+                },searchable : false
             },
-        ]
+        ],
+        initComplete: function () {
+            var api = this.api();
+
+            // Add search input for each searchable column
+            api.columns().every(function () {
+                var column = this;
+
+                if (column.settings()[0].aoColumns[column.index()].searchable) {
+                    var input = $('<input type="text" class="form-control form-control-sm" placeholder="Search">')
+                        .appendTo($(column.header()))
+                        .on('click', function (e) {
+                            e.stopPropagation(); // Prevent sorting when clicking on the search input
+                        })
+                        .on('keyup change clear', function () {
+                            if (column.search() !== this.value) {
+                                column.search(this.value).draw();
+                            }
+                        });
+
+                    // Set the default search value
+                    input.val(column.search());
+                }
+            });
+        }
     });
-});
+
+    });
 
 $(function () {
     $("#CountryId").on("change", function () {

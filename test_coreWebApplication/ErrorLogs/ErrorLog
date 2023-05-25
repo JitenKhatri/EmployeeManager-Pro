@@ -19,3 +19,59 @@ Source: Core .Net SqlClient Data Provider
 TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
 -----------------------------------------------------------
 
+Time: 25-05-2023 01:37:27 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=04-05-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+
+Time: 25-05-2023 01:42:04 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=04-05-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+
+Time: 25-05-2023 01:43:34 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=04-05-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+
+Time: 25-05-2023 01:51:01 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=04-05-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+
+Time: 25-05-2023 01:56:54 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=04-05-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+
+Time: 25-05-2023 01:59:15 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=05-04-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+
+Time: 25-05-2023 02:03:18 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=05-04-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+
+Time: 25-05-2023 02:09:50 PM
+-----------------------------------------------------------
+Message: Error parsing column 8 (DateOfBirth=05-04-1992 00:00:00 - DateTime)
+Source: Dapper
+TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
+-----------------------------------------------------------
+

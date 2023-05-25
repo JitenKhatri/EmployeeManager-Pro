@@ -32,8 +32,35 @@ body {
         transform: translateY(-50%);
         cursor: pointer;
     }
+.column-header {
+    font-weight: bold;
+}
+
+.search-wrapper {
+    margin-top: 5px;
+}
 
 div.dt-buttons {
     float: left;
     margin-right: 20px;
+}
+
+.loading-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-left: -50px;
+    margin-top: -100px;
+    z-index: 10000;
+    overflow: auto;
 }

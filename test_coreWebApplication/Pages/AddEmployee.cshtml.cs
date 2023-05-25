@@ -16,12 +16,14 @@ namespace test_coreWebApplication.Pages
         [BindProperty(SupportsGet = true)]
         public Employee Employee { get; set; }
         public SelectList Countries { get; set; }
+        public SelectList Cities { get; set; }
         public Country Country { get; set; }
         public City City { get; set; }
         public long CountryId { get; set; }
         public void OnGet(string EmployeeID)
         {
             Countries = new SelectList(objDB.EmployeeRepository.GetallCountries(), nameof(Country.CountryId), nameof(Country.CountryName));
+            Cities = new SelectList(objDB.EmployeeRepository.GetCityByCountry(0), nameof(City.CityId), nameof(City.CityName));
             Employee = objDB.EmployeeRepository.SelectDatabyID(EmployeeID);
             if(EmployeeID == "0")
             {

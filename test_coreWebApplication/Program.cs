@@ -5,7 +5,11 @@ using test_coreWebApplication.DataAccess.Repositories.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+//builder.Services.AddRazorPages();
+builder.Services.AddMvc().AddRazorPagesOptions(options =>
+{
+    options.Conventions.AddPageRoute("/Employee", "");
+});
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
 //builder.Logging.AddFile("Logs/myapp-{Date}.txt"); for serilog if using.
@@ -39,4 +43,5 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.Run();
+
+app.Run();  

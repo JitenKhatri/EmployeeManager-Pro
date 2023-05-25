@@ -30,7 +30,7 @@ namespace test_coreWebApplication.Pages
         }
 
 
-        public IActionResult OnPostGetEmployees(int Start, int Length)
+        public IActionResult OnPostGetEmployees()
         {
             // Perform server-side pagination using the stored procedure and Dapper
             List<Employee> employees = new List<Employee>();
@@ -42,6 +42,12 @@ namespace test_coreWebApplication.Pages
             var searchValue = Request.Form["search[value]"].FirstOrDefault();
             var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
             var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+            string emailSearch = Request.Form["columns[1][search][value]"];
+            string employeeIdSearch = Request.Form["columns[0][search][value]"];
+            string employeeNameSearch = Request.Form["columns[2][search][value]"];
+            string addressSearch = Request.Form["columns[3][search][value]"];
+            string mobileNoSearch = Request.Form["columns[4][search][value]"];
+            string dateOfBirthSearch = Request.Form["columns[5][search][value]"];
             using (SqlConnection con = new SqlConnection(configuration.GetConnectionString("mycon")))
             {
                 con.Open();
@@ -54,12 +60,15 @@ namespace test_coreWebApplication.Pages
                 p.Add("@FilteredRecords", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 p.Add("@SortColumn", sortColumn);
                 p.Add("@SortColumnDirection", sortColumnDirection);
+                p.Add("@EmailSearchString", emailSearch);
+                p.Add("@EmployeeNameSearchString", employeeNameSearch);
+                p.Add("@AddressSearchString", addressSearch);
+                p.Add("@MobileNoSearchString", mobileNoSearch);
+                p.Add("@EmployeeIdSearchString", employeeIdSearch);
                 employees = con.Query<Employee>("Usp_GetEmployees_Paginated", p, commandType: CommandType.StoredProcedure).ToList();
-
                 totalRecords = p.Get<int>("@TotalRecords");
                 filteredRecords = p.Get<int>("@FilteredRecords");
             }
-
             // Create a response object with the paginated data
             var response = new
             {

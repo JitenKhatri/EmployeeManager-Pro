@@ -62,6 +62,8 @@ namespace test_coreWebApplication.DataAccess.Repositories
                 param.Add("@Password", objemp.Password);
                 param.Add("@EmailID", objemp.EmailID);
                 param.Add("@Query", 2);
+                param.Add("@CityId", objemp.CityId);
+                param.Add("@CountryId", objemp.CountryId);
                 result = con.Execute("Usp_InsertUpdateDelete_Employee", param, null, 0, commandType: CommandType.StoredProcedure).ToString();
                 con.Open();
                 return result;
