@@ -55,7 +55,7 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         paging: true,
-        lengthMenu: [[10, 25, 50, 2147483647], [10, 25, 50, "All"]],
+        lengthMenu: [[10, 25, 50, 1000], [10, 25, 50, "All"]],
         ordering: true,
         searching: true,
         columnDefs: [

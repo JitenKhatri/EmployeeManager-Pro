@@ -22,14 +22,14 @@
     <div class="row mb-3">
     <div class="form-group col-md-6">
         <label>Address:</label>
-        <input type="text" class="form-control" asp-for="Employee.Address" />
+        <input type="text" class="form-control" asp-for="Employee.Address"/>
         <span asp-validation-for="Employee.Address" class="text-danger"></span>
     </div>
 
 
     <div class="form-group col-md-6">
         <label>Mobileno:</label>
-        <input type="number" class="form-control" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)" asp-for="Employee.Mobileno" />
+        <input type="number" class="form-control" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)" asp-for="Employee.Mobileno"/>
         <span asp-validation-for="Employee.Mobileno" class="text-danger"></span>
     </div>
         </div>
@@ -38,14 +38,14 @@
     <div class="form-group col-md-6">
     <div class="password-wrapper">
         <label class="form-label">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" asp-for="Employee.Password">
+    <input type="password" class="form-control" id="password" placeholder="Password" asp-for="Employee.Password" value="@Model.Employee.Password">
     <i class="bi bi-eye toggle-password" id="togglePassword" onmousedown="showPassword()" onmouseup="hidePassword()" onmouseout="hidePassword()"></i>
     <span class="text-danger" asp-validation-for="Employee.Password"></span>
     </div>
   </div>
      <div class="password-wrapper col-md-6">
             <label class="form-label">ConfirmPassword</label>
-        <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm your password" asp-for="Employee.ConfirmPassword">
+        <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm your password" asp-for="Employee.ConfirmPassword" value="@Model.Employee.Password">
         <i class="bi bi-eye toggle-password" id="toggleConfirmPassword" onmousedown="showConfirmPassword()" onmouseup="hideConfirmPassword()" onmouseout="hideConfirmPassword()"></i>
         <span class="text-danger" asp-validation-for="Employee.ConfirmPassword"></span>
         </div>
@@ -67,7 +67,7 @@
     </div>
        <div class="col-md-4">
         <label class="form-label">Date Of Birth</label>
-        <input type="date" asp-for="Employee.DateOfBirth" class="form-control" />
+        <input type="date" asp-for="Employee.DateOfBirth" class="form-control"/>
         <span class="text-danger" asp-validation-for="Employee.DateOfBirth"></span>
     </div>
     </div>

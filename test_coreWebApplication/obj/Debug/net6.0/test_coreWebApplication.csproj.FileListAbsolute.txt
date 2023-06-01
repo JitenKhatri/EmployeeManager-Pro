@@ -54,3 +54,4 @@ C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\
 C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\pca19\source\repos\test_coreWebApplication\test_coreWebApplication\bin\Debug\net6.0\Newtonsoft.Json.dll

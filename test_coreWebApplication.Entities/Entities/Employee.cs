@@ -35,7 +35,7 @@ namespace test_coreWebApplication.Entities.Entities
         public long CountryId { get; set; }
         public long CityId { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; } = new DateTime();
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
@@ -45,7 +45,10 @@ namespace test_coreWebApplication.Entities.Entities
             {
                 results.Add(new ValidationResult("Employee must be at least 18 years old.", new[] { "DateOfBirth" }));
             }
-
+            if(DateOfBirth < DateTime.Today.AddYears(-70))
+            {
+                results.Add(new ValidationResult("Employee must not be more than 70 years old", new[] { "DateOfBirth" }));
+            }
             return results;
         }
     }

@@ -75,3 +75,10 @@ Source: Dapper
 TargetSite: Void ThrowDataException(System.Exception, Int32, System.Data.IDataReader, System.Object)
 -----------------------------------------------------------
 
+Time: 31-05-2023 10:38:08 AM
+-----------------------------------------------------------
+Message: Unexpected character encountered while parsing value: E. Path '', line 0, position 0.
+Source: Newtonsoft.Json
+TargetSite: Boolean ParseValue()
+-----------------------------------------------------------
+
